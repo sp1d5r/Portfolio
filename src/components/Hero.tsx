@@ -18,6 +18,13 @@ const Hero = () => {
         span.innerText = char;
         span.style.opacity = '0';
         span.style.display = 'inline-block';
+        
+        // Ensure spaces have proper width and don't collapse
+        if (char === ' ') {
+          span.innerHTML = '&nbsp;';
+          span.style.width = '0.25em'; // Give space a consistent width
+        }
+        
         element.appendChild(span);
         
         gsap.to(span, {
