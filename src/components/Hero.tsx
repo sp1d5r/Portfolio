@@ -47,7 +47,7 @@ const Hero = () => {
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden">
         <motion.div 
-          className="absolute top-0 left-0 w-20 h-20 rounded-full bg-purple-500 opacity-20"
+          className="absolute top-0 left-0 w-20 h-20 rounded-full bg-mint opacity-20"
           animate={{ 
             x: [0, 100, 0], 
             y: [0, 200, 0],
@@ -60,7 +60,7 @@ const Hero = () => {
           }}
         />
         <motion.div 
-          className="absolute bottom-0 right-0 w-32 h-32 rounded-full bg-blue-500 opacity-20"
+          className="absolute bottom-0 right-0 w-32 h-32 rounded-full bg-azure opacity-20"
           animate={{ 
             x: [0, -150, 0], 
             y: [0, -100, 0],
@@ -82,10 +82,10 @@ const Hero = () => {
           transition={{ duration: 0.8 }}
           className="mb-6"
         >
-          <h1 className="animate-text text-6xl font-bold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600">
+          <h1 className="animate-text text-6xl font-bold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-azure to-magenta">
             Elijah Ahmad
           </h1>
-          <h2 className="animate-text text-3xl mt-4 text-gray-300">
+          <h2 className="animate-text text-3xl mt-4 text-gray-300 font-mono tracking-tight">
             Software Engineer & Startup Founder
           </h2>
         </motion.div>
@@ -106,16 +106,16 @@ const Hero = () => {
           className="flex flex-wrap justify-center gap-4"
         >
           <motion.button 
-            whileHover={{ scale: 1.05, backgroundColor: "#4C1D95" }}
+            whileHover={{ scale: 1.05, backgroundColor: "#BC3BB0" }}
             whileTap={{ scale: 0.95 }}
-            className="px-8 py-3 bg-purple-700 rounded-full font-medium"
+            className="px-8 py-3 bg-magenta rounded-full font-mono font-medium border border-magentaLight"
           >
             My Work
           </motion.button>
           <motion.button 
-            whileHover={{ scale: 1.05, backgroundColor: "#1E40AF" }}
+            whileHover={{ scale: 1.05, backgroundColor: "#4A9DCA" }}
             whileTap={{ scale: 0.95 }}
-            className="px-8 py-3 bg-blue-700 rounded-full font-medium"
+            className="px-8 py-3 bg-azure rounded-full font-mono font-medium border border-azureLight"
           >
             Contact Me
           </motion.button>

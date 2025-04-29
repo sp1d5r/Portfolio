@@ -6,6 +6,10 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
+        mono: ['"Space Mono"', 'monospace'],
+        chivo: ['Chivo', 'sans-serif'],
+        playfair: ['"Playfair Display"', 'serif'],
+        jakarta: ['"Plus Jakarta Sans"', 'sans-serif'],
       },
       colors: {
         primary: {
@@ -20,6 +24,19 @@ module.exports = {
           800: '#1e40af',
           900: '#1e3a8a',
         },
+        mint: '#ADEDC2',
+        cyan: '#C4F4F9',
+        azure: '#63BFF4',
+        magenta: '#E949DB',
+        // Extended palette with darker/lighter variations
+        mintDark: '#8BC7A2',
+        mintLight: '#C5F3D5',
+        cyanDark: '#9ED6DA',
+        cyanLight: '#DBFAFD',
+        azureDark: '#4A9DCA',
+        azureLight: '#9DD5FA',
+        magentaDark: '#BC3BB0',
+        magentaLight: '#F286E8',
       },
     },
   },

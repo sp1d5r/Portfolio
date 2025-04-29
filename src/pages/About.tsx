@@ -34,7 +34,7 @@ const About: React.FC = () => {
         <div className="grid md:grid-cols-2 gap-6">
           <div className="bg-white p-6 rounded-lg shadow-md">
             <h3 className="text-xl font-semibold">Elijah Ahmad</h3>
-            <p className="text-gray-600">Founder & CEO</p>
+            <p className="text-gray-600 font-mono">Founder & CEO</p>
             <p className="mt-2">
               With over a decade of experience in software development and digital strategy, 
               Elijah leads our team with vision and expertise.
@@ -49,6 +49,16 @@ const About: React.FC = () => {
           </div>
         </div>
       </section>
+      
+      <div className="mt-12 pt-8 border-t border-gray-200">
+        <div className="flex flex-wrap gap-4">
+          <span className="px-3 py-1 bg-gray-200 rounded-full text-gray-700 font-mono">React</span>
+          <span className="px-3 py-1 bg-gray-200 rounded-full text-gray-700 font-mono">TypeScript</span>
+          <span className="px-3 py-1 bg-gray-200 rounded-full text-gray-700 font-mono">Node.js</span>
+          <span className="px-3 py-1 bg-gray-200 rounded-full text-gray-700 font-mono">AWS</span>
+          <span className="px-3 py-1 bg-gray-200 rounded-full text-gray-700 font-mono">UI/UX Design</span>
+        </div>
+      </div>
     </div>
   );
 };

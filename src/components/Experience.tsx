@@ -50,11 +50,11 @@ const ExperienceItem = ({ logo, company, role, period, location, description, sk
           className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-2"
         >
           <h3 className="text-2xl font-bold text-white">{role}</h3>
-          <span className="text-purple-400 text-sm font-medium">{period}</span>
+          <span className="text-cyan font-mono font-medium">{period}</span>
         </motion.div>
         
         <div className="flex flex-col sm:flex-row sm:items-center gap-2 mb-4">
-          <h4 className="text-xl text-blue-400">{company}</h4>
+          <h4 className="text-xl text-azure">{company}</h4>
           <span className="text-gray-400 text-sm">• {location}</span>
         </div>
         
@@ -67,7 +67,7 @@ const ExperienceItem = ({ logo, company, role, period, location, description, sk
               initial={{ opacity: 0, scale: 0.8 }}
               animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
               transition={{ duration: 0.4, delay: 0.3 + i * 0.05 }}
-              className="px-3 py-1 bg-gray-800 rounded-full text-sm text-gray-300"
+              className="px-3 py-1 bg-gray-800 rounded-full text-sm text-mint font-mono"
             >
               {skill}
             </motion.span>
@@ -148,7 +148,7 @@ const Experience = () => {
         className="mb-16 text-center"
       >
         <motion.div
-          className="inline-block mb-2 px-4 py-1 bg-purple-900/30 rounded-full text-purple-400 text-sm font-medium"
+          className="inline-block mb-2 px-4 py-1 bg-magenta/20 rounded-full text-magenta text-sm font-mono font-medium"
           whileHover={{ scale: 1.05 }}
         >
           My Journey

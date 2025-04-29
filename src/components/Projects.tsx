@@ -43,7 +43,7 @@ const ProjectCard = ({ project, index, progress }: { project: typeof projectsDat
         >
           <Link
             to="/viranova"
-            className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full text-white font-medium"
+            className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full text-white font-mono font-medium"
           >
             <span>View Project</span>
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -65,7 +65,7 @@ const ProjectCard = ({ project, index, progress }: { project: typeof projectsDat
       >
         <Link
           to={`/projects/${project.id}`}
-          className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full text-white font-medium"
+          className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full text-white font-mono font-medium"
         >
           <span>View Project</span>
           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -112,7 +112,7 @@ const ProjectCard = ({ project, index, progress }: { project: typeof projectsDat
         >
           <div className="bg-gray-900/60 backdrop-blur-lg p-8 rounded-2xl border border-gray-800 shadow-xl">
             <motion.h3 
-              className="text-3xl font-bold text-white mb-3 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600"
+              className="text-3xl font-bold text-white mb-3 bg-clip-text text-transparent bg-gradient-to-r from-azure to-magenta"
               initial={{ opacity: 0 }}
               animate={isInView ? { opacity: 1 } : { opacity: 0 }}
               transition={{ delay: index * 0.3 + 0.4, duration: 0.5 }}
@@ -136,8 +136,8 @@ const ProjectCard = ({ project, index, progress }: { project: typeof projectsDat
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
                   transition={{ duration: 0.3, delay: index * 0.3 + 0.6 + (i * 0.05) }}
-                  className="px-3 py-1 bg-gray-800 rounded-full text-sm text-gray-300"
-                  whileHover={{ backgroundColor: "#4c1d95", scale: 1.1, y: -2 }}
+                  className="px-3 py-1 bg-gray-800 rounded-full text-sm text-mint font-mono"
+                  whileHover={{ backgroundColor: "#ADEDC2", color: "#333", scale: 1.1, y: -2 }}
                 >
                   {tag}
                 </motion.span>
@@ -181,8 +181,8 @@ const ProjectCard = ({ project, index, progress }: { project: typeof projectsDat
           <motion.div 
             className={`absolute inset-0 opacity-30 mix-blend-overlay ${
               index % 2 === 0 
-                ? 'bg-gradient-to-br from-purple-600 to-blue-500' 
-                : 'bg-gradient-to-br from-blue-500 to-purple-600'
+                ? 'bg-gradient-to-br from-magenta to-azure' 
+                : 'bg-gradient-to-br from-azure to-cyan'
             }`}
             initial={{ opacity: 0 }}
             animate={isInView ? { opacity: 0.3 } : { opacity: 0 }}
@@ -235,12 +235,12 @@ const Projects = () => {
         className="mb-28 text-center"
       >
         <motion.div
-          className="inline-block mb-2 px-4 py-1 bg-blue-900/30 rounded-full text-blue-400 text-sm font-medium"
+          className="inline-block mb-2 px-4 py-1 bg-azure/20 rounded-full text-azure text-sm font-mono font-medium"
           whileHover={{ scale: 1.05 }}
         >
           My Products
         </motion.div>
-        <h2 className="text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600">
+        <h2 className="text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-azure to-magenta">
           Projects & Startups
         </h2>
         <p className="text-gray-400 max-w-2xl mx-auto text-lg">
