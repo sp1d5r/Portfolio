@@ -1,8 +1,15 @@
 import React from 'react';
 
 const About: React.FC = () => {
+  React.useEffect(() => {
+    document.title = "About | Elijah Ahmad";
+    
+    // Scroll to top when component mounts
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
-    <div className="max-w-4xl mx-auto space-y-8">
+    <div className="max-w-4xl mx-auto space-y-8 p-4 sm:p-6 lg:p-8">
       <section>
         <h1 className="text-4xl font-bold mb-6">About The Ahmad Company</h1>
         <p className="text-lg text-gray-700">

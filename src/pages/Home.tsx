@@ -6,14 +6,18 @@ import Contact from '../components/Contact';
 import Navigation from '../components/Navigation';
 
 const Home: React.FC = () => {
+  React.useEffect(() => {
+    document.title = "Elijah Ahmad | Home";
+  }, []);
+  
   return (
-    <div>
+    <>
       <Navigation />
       <Hero />
       <Experience />
       <Projects />
       <Contact />
-    </div>
+    </>
   );
 };
 
