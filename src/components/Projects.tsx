@@ -1,51 +1,9 @@
 import { useRef, useState, useEffect } from 'react';
 import { motion, useInView, AnimatePresence, useScroll, useTransform, MotionValue } from 'framer-motion';
+import { Link } from 'react-router-dom';
+import { projectsData } from '../data/projectsData';
 
-interface Project {
-  id: string;
-  title: string;
-  description: string;
-  image: string;
-  tags: string[];
-  link?: string;
-}
-
-const projectData: Project[] = [
-  {
-    id: "project1",
-    title: "Project One",
-    description: "A startup project focused on innovative solutions. Built with React, TypeScript, and Next.js.",
-    image: "https://via.placeholder.com/600x400",
-    tags: ["React", "TypeScript", "Next.js"],
-    link: "https://example.com"
-  },
-  {
-    id: "project2",
-    title: "Project Two",
-    description: "A machine learning platform for automated decision making. Leveraged AI models and data analytics.",
-    image: "https://via.placeholder.com/600x400",
-    tags: ["Python", "Machine Learning", "AI", "React"],
-    link: "https://example.com"
-  },
-  {
-    id: "project3",
-    title: "Project Three",
-    description: "Mobile application for on-demand services. Built with React Native and Firebase.",
-    image: "https://via.placeholder.com/600x400",
-    tags: ["React Native", "Firebase", "TypeScript"],
-    link: "https://example.com"
-  },
-  {
-    id: "project4",
-    title: "Project Four",
-    description: "Blockchain-based identity verification system using Ethereum smart contracts.",
-    image: "https://via.placeholder.com/600x400",
-    tags: ["Blockchain", "Ethereum", "Solidity", "Web3"],
-    link: "https://example.com"
-  }
-];
-
-const ProjectCard = ({ project, index, progress }: { project: Project; index: number; progress: MotionValue<number> }) => {
+const ProjectCard = ({ project, index, progress }: { project: typeof projectsData[0]; index: number; progress: MotionValue<number> }) => {
   const [isHovered, setIsHovered] = useState(false);
   const cardRef = useRef(null);
   const isInView = useInView(cardRef, { once: true, amount: 0.2 });
@@ -70,6 +28,55 @@ const ProjectCard = ({ project, index, progress }: { project: Project; index: nu
     [0, 1], 
     [index % 2 === 0 ? 2 : -2, index % 2 === 0 ? -2 : 2]
   );
+
+  // Determine if the project should use an external link
+  const renderProjectLink = () => {
+    if (project.id === "viranova") {
+      return (
+        <motion.div
+          whileHover={{ 
+            scale: 1.05, 
+            boxShadow: "0 0 20px rgba(124, 58, 237, 0.5)"
+          }}
+          whileTap={{ scale: 0.98 }}
+          className="inline-block"
+        >
+          <a
+            href={project.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full text-white font-medium"
+          >
+            <span>View Project</span>
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+            </svg>
+          </a>
+        </motion.div>
+      );
+    }
+    
+    return (
+      <motion.div
+        whileHover={{ 
+          scale: 1.05, 
+          boxShadow: "0 0 20px rgba(124, 58, 237, 0.5)"
+        }}
+        whileTap={{ scale: 0.98 }}
+        className="inline-block"
+      >
+        <Link
+          to={`/projects/${project.id}`}
+          className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full text-white font-medium"
+        >
+          <span>View Project</span>
+          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+          </svg>
+        </Link>
+      </motion.div>
+    );
+  };
 
   return (
     <motion.div
@@ -144,22 +151,7 @@ const ProjectCard = ({ project, index, progress }: { project: Project; index: nu
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ delay: index * 0.3 + 0.7, duration: 0.5 }}
             >
-              <motion.a
-                href={project.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full text-white font-medium"
-                whileHover={{ 
-                  scale: 1.05, 
-                  boxShadow: "0 0 20px rgba(124, 58, 237, 0.5)"
-                }}
-                whileTap={{ scale: 0.98 }}
-              >
-                <span>View Project</span>
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                </svg>
-              </motion.a>
+              {renderProjectLink()}
             </motion.div>
           </div>
         </motion.div>
@@ -219,7 +211,7 @@ const Projects = () => {
     if (isInView) {
       const interval = setInterval(() => {
         setVisibleProjects(prev => {
-          if (prev < projectData.length) {
+          if (prev < projectsData.length) {
             return prev + 1;
           } else {
             clearInterval(interval);
@@ -259,7 +251,7 @@ const Projects = () => {
       </motion.div>
       
       <div className="max-w-7xl mx-auto px-4">
-        {projectData.slice(0, visibleProjects).map((project, index) => (
+        {projectsData.slice(0, visibleProjects).map((project, index) => (
           <ProjectCard 
             key={project.id} 
             project={project} 
