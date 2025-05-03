@@ -48,12 +48,12 @@ const Viranova: React.FC = () => {
       <main className="py-12">
         <div className="max-w-6xl mx-auto px-4">
           {/* Hero image */}
-          <div className="mb-16 relative mx-auto rounded-xl overflow-hidden shadow-2xl border border-gray-800 max-w-5xl aspect-video">
-            <div className="absolute inset-0 bg-gradient-to-r from-purple-900/40 to-blue-900/40 mix-blend-overlay" />
+          <div className="mb-16 relative mx-auto rounded-xl overflow-hidden shadow-2xl border border-gray-800 max-w-5xl aspect-video bg-gray-800">
+            <div className="absolute inset-0 bg-gradient-to-r from-blue-900/40 to-purple-900/40 mix-blend-overlay" />
             <img
-              src="https://via.placeholder.com/1200x600"
+              src="/src/assets/viranova/landing.png"
               alt="Viranova Platform"
-              className="w-full h-full object-cover"
+              className="w-full h-full object-contain"
             />
           </div>
           
@@ -82,6 +82,93 @@ const Viranova: React.FC = () => {
                   This insight led me to leave Palantir and complete my master's at Imperial College London, 
                   focusing my thesis on this specific challenge. Viranova was born from this vision.
                 </p>
+              </div>
+            </section>
+            
+            {/* Product Gallery */}
+            <section className="mb-20">
+              <h2 className="text-3xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600">
+                Product Screenshots
+              </h2>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="relative rounded-xl overflow-hidden shadow-xl border border-gray-800 bg-gray-800">
+                  <img
+                    src="/src/assets/viranova/dashboard.png"
+                    alt="Viranova Dashboard"
+                    className="w-full h-full object-contain"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                  <div className="absolute bottom-0 left-0 p-6">
+                    <h3 className="text-xl font-semibold text-white">Dashboard Overview</h3>
+                    <p className="text-gray-300">Monitor your content extraction pipeline</p>
+                  </div>
+                </div>
+                
+                <div className="relative rounded-xl overflow-hidden shadow-xl border border-gray-800 bg-gray-800">
+                  <img
+                    src="/src/assets/viranova/analytics.png"
+                    alt="Viranova Analytics"
+                    className="w-full h-full object-contain"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                  <div className="absolute bottom-0 left-0 p-6">
+                    <h3 className="text-xl font-semibold text-white">Analytics Dashboard</h3>
+                    <p className="text-gray-300">Track performance and engagement metrics</p>
+                  </div>
+                </div>
+                
+                <div className="relative rounded-xl overflow-hidden shadow-xl border border-gray-800 bg-gray-800">
+                  <img
+                    src="/src/assets/viranova/channels.png"
+                    alt="Viranova Channels"
+                    className="w-full h-full object-contain"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                  <div className="absolute bottom-0 left-0 p-6">
+                    <h3 className="text-xl font-semibold text-white">Channel Management</h3>
+                    <p className="text-gray-300">Organize and manage your content sources</p>
+                  </div>
+                </div>
+                
+                <div className="relative rounded-xl overflow-hidden shadow-xl border border-gray-800 bg-gray-800">
+                  <img
+                    src="/src/assets/viranova/create-shorts.jpeg"
+                    alt="Viranova Create Shorts"
+                    className="w-full h-full object-contain"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                  <div className="absolute bottom-0 left-0 p-6">
+                    <h3 className="text-xl font-semibold text-white">Short Creation</h3>
+                    <p className="text-gray-300">Generate engaging short-form content</p>
+                  </div>
+                </div>
+                
+                <div className="relative rounded-xl overflow-hidden shadow-xl border border-gray-800 bg-gray-800">
+                  <img
+                    src="/src/assets/viranova/videos.jpeg"
+                    alt="Viranova Videos"
+                    className="w-full h-full object-contain"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                  <div className="absolute bottom-0 left-0 p-6">
+                    <h3 className="text-xl font-semibold text-white">Video Library</h3>
+                    <p className="text-gray-300">Access and manage your video content</p>
+                  </div>
+                </div>
+                
+                <div className="relative rounded-xl overflow-hidden shadow-xl border border-gray-800 bg-gray-800">
+                  <img
+                    src="/src/assets/viranova/data-catalogue.png"
+                    alt="Viranova Data Catalogue"
+                    className="w-full h-full object-contain"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                  <div className="absolute bottom-0 left-0 p-6">
+                    <h3 className="text-xl font-semibold text-white">Data Catalogue</h3>
+                    <p className="text-gray-300">Organize and access your processed data</p>
+                  </div>
+                </div>
               </div>
             </section>
             
