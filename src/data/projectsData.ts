@@ -23,6 +23,17 @@ export const projectsData: Project[] = [
     date: "2022-2023"
   },
   {
+    id: "conventa",
+    title: "Conventa",
+    subtitle: "Duolingo meets Psychology Books",
+    description: "A mobile-first learning platform for psychology and soft skills, designed to make professional development more accessible and engaging. Built with React and Firebase, featuring PWA capabilities for offline learning.",
+    image: "/src/assets/conventa/dashboard.png",
+    coverImage: "/src/assets/conventa/landing-page.png",
+    tags: ["React", "Firebase", "PWA", "Figma", "User Research", "Mobile First"],
+    link: "https://www.conventa.net",
+    date: "2021-2022"
+  },
+  {
     id: "project2",
     title: "Project Two",
     description: "A machine learning platform for automated decision making. Leveraged AI models and data analytics.",

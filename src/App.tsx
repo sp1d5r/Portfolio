@@ -8,6 +8,7 @@ import Services from './pages/Services';
 import Contact from './pages/Contact';
 import ProjectDetail from './pages/ProjectDetail';
 import Viranova from './pages/Viranova';
+import Conventa from './pages/Conventa';
 
 const App: React.FC = () => {
   return (
@@ -20,6 +21,7 @@ const App: React.FC = () => {
             <Route path="services" element={<Services />} />
             <Route path="contact" element={<Contact />} />
             <Route path="viranova" element={<Viranova />} />
+            <Route path="conventa" element={<Conventa />} />
             <Route path="projects/:id" element={<ProjectDetail />} />
             <Route path="*" element={<div className="text-center py-20"><h1 className="text-4xl">404 - Page Not Found</h1></div>} />
           </Route>

@@ -64,7 +64,7 @@ const ProjectCard = ({ project, index, progress }: { project: typeof projectsDat
         className="inline-block"
       >
         <Link
-          to={`/projects/${project.id}`}
+          to={`/${project.id}`}
           className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full text-white font-mono font-medium"
         >
           <span>View Project</span>
